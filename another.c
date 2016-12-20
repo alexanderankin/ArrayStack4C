@@ -55,7 +55,7 @@ void *memmove(void *dest, const void *src, size_t n)
   {
     ((int *)temp)[i] = ((int *)src)[i];
   }
-  printf("memmove destination is %d / %p .\n", dest, dest);
+  // printf("memmove destination is %d / %p .\n", dest, dest);
   for (int i = 0; i < n; ++i)
   {
     ((int *)dest)[i] = ((int *)temp)[i];
@@ -69,7 +69,7 @@ static
 void
 fix_and_move (another_stream *stream, int length)
 {  
-  printf("stack_array     is %d\n", stream->stack_array);
+  // printf("stack_array     is %d\n", stream->stack_array);
   // printf("l is            is %d\n", length);
   int *temp = realloc(
     stream->stack_array,
@@ -77,27 +77,27 @@ fix_and_move (another_stream *stream, int length)
 
   if (temp == NULL)
   {
-    printf("Could not reallocate things.\n");
+    // printf("Could not reallocate things.\n");
   }
   else
   {
-    printf("reallocated (temp is %d / %p )\n", temp, temp);
-    printf("reallocate asked for %d bytes, address at end: %d, %p.\n",
+    // printf("reallocated (temp is %d / %p )\n", temp, temp);
+    /*printf("reallocate asked for %d bytes, address at end: %d, %p.\n",
       stream->size + length + 1,
       stream->stack_array + length + 1,
-      stream->stack_array + length + 1);
+      stream->stack_array + length + 1);*/
     stream->stack_array = temp;
   }
 
-  printf("stack_array + l is %d\n", stream->stack_array + length);
-  printf("stack_array     is %d\n", stream->stack_array);
-  printf("stack_size      is %d\n", stream->size);
+  // printf("stack_array + l is %d\n", stream->stack_array + length);
+  // printf("stack_array     is %d\n", stream->stack_array);
+  // printf("stack_size      is %d\n", stream->size);
   memmove(stream->stack_array + length,
     stream->stack_array,
     stream->size);
 
   stream->size += length;
-  printf("size is: %d\n", stream->size);
+  // printf("size is: %d\n", stream->size);
 }
 
 void another_queue_string(another_stream *stream,
