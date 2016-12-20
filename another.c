@@ -12,7 +12,7 @@ struct _array_stack
 };
 
 array_stack *
-another_new(void)
+array_stack_new(void)
 {
   array_stack *stack = malloc( sizeof(*stack) );
 
@@ -25,7 +25,7 @@ another_new(void)
 }
 
 void
-another_free(array_stack *stack)
+array_stack_free(array_stack *stack)
 {
   if (stack->array)
   {
@@ -40,7 +40,7 @@ another_free(array_stack *stack)
 }
 
 int
-another_getchar(array_stack *stack)
+array_stack_getchar(array_stack *stack)
 {
   if (stack->pointer < 1)
     return EOF;
@@ -49,7 +49,7 @@ another_getchar(array_stack *stack)
     return stack->array[stack->pointer--];
 }
 
-int another_putchar(array_stack *stack, int c)
+int array_stack_putchar(array_stack *stack, int c)
 {
   int * temp = realloc(stack->array, stack->size + sizeof(*temp) * sizeof(c));
   if (temp == NULL)
@@ -102,7 +102,7 @@ string_rev(char *str)
 }
 
 void
-another_queue_string( array_stack *stack,
+array_stack_queue_string( array_stack *stack,
   char *string, int length )
 {
   string_rev( string );
