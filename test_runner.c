@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 
-#include "another.h"
+#include "stack_array.h"
 
 int main(int argc, char const *argv[])
 {

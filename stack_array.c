@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "another.h"
+#include "stack_array.h"
 
 struct _array_stack
 {

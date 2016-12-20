@@ -1,8 +1,12 @@
 CFLAGS += -g
+.PHONY : test
 
-file : file.c another.o
+test : test_runner
+	./test_runner
 
-another.o : another.c
+test_runner : test_runner.c stack_array.o
+
+stack_array.o : stack_array.c
 
 clean:
 	find . -type f -executable -exec rm {} \;
