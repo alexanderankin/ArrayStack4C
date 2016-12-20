@@ -1,4 +1,3 @@
-## TODO
+# ArrayStack
 
-* rename variables to mean something valuable
-* code cleanup
+This is a small module for use as a buffer in a project.
