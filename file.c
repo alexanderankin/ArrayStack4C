@@ -7,7 +7,7 @@ int main(int argc, char const *argv[])
 {
   char stat[] = "example";
 
-  another_stream *mystream = another_new();
+  array_stack *mystream = another_new();
 
   assert( another_getchar( mystream ) == EOF );
 

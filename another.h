@@ -1,33 +1,33 @@
 #ifndef another_h
 #define another_h
 
-typedef struct _another another_stream;
+typedef struct _array_stack array_stack;
 
 /**
  * Malloc
  */
-another_stream *another_new(void);
+array_stack *another_new(void);
 
 /**
  * Free
  */
-void another_free(another_stream *);
+void another_free(array_stack *);
 
 /**
  * getchar()
  */
-int another_getchar(another_stream *);
+int another_getchar(array_stack *);
 
 /**
  * putchar()
  */
-int another_putchar(another_stream *, int c);
+int another_putchar(array_stack *, int c);
 
 /**
  * Reverses a string and puts it on the stack.
  */
-void another_queue_string(another_stream *, char *, int);
+void another_queue_string(array_stack *, char *, int);
 
-/** void another_flush(another_stream *); */
+/** void another_flush(array_stack *); */
 
 #endif
